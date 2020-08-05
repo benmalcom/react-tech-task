@@ -7,7 +7,7 @@ const Home = props => {
   const {} = props;
   const [inputValue, setInputValue] = useState('');
 
-  const { messages, groupedByDate, sendMessage, getMoreMessages, unreadCount } = useChat();
+  const { messages, groupedByDate, sendMessage, getMoreMessages, unreadCount, totalCount } = useChat();
 
   const messageGroups = groupedByDate(messages);
 
@@ -18,6 +18,7 @@ const Home = props => {
       setInputValue('');
     }
   };
+  const showMoreButton = messages.length < totalCount;
   return (
     <div className=" container-fluid">
       <div className=" row chat-wrapper">
@@ -26,7 +27,7 @@ const Home = props => {
           <UserInfo user="user113" />
           <div className="message-list">
             <ul className="text-center">
-              <MoreButton onClick={getMoreMessages}/>
+              {showMoreButton && <MoreButton onClick={getMoreMessages}/>}
               {Object.keys(messageGroups).map(date => <Fragment key={date}>
                 <DateGroup date={date}/>
                 {messageGroups[date].map(message => <MessageListItem key={message.id} message={message}/>)}
