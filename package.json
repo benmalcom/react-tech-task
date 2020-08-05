@@ -1,5 +1,5 @@
 {
-  "name": "covid-19-crp",
+  "name": "react-tech-task",
   "version": "1.0.0",
   "scripts": {
     "start": "webpack-dev-server  --config webpack.dev.config.js",
