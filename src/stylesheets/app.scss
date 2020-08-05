@@ -1,0 +1,29 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+@import 'util';
+//@import 'style.css';
+body, html{
+  padding: 0;
+  margin: 0;
+}
+#app {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  * {
+    font-family: 'Open Sans', sans-serif !important;
+  }
+  background-color: rgba(0, 0, 0, 0.6);
+  ul {
+    list-style: none;
+  }
+
+}
+
+/*
+  ##Device = Most of the Smart phones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+}

@@ -1,0 +1,66 @@
+.Progress {
+  margin: 0 auto;
+  width: 70px;
+  text-align: center;
+  position: relative;
+  .progress-spinner-message{
+    color: $app-color-primary;
+    font-size: 14px;
+    margin-top: 3px;
+    margin-bottom: 0;
+  }
+  & > div {
+    margin: 0 3px;
+    width: 15px;
+    height: 15px;
+    background-color: $app-color-primary;
+
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: bouncedelay 1.4s infinite ease-in-out both;
+    animation: bouncedelay 1.4s infinite ease-in-out both;
+  }
+
+  &.alt {
+    div {
+      background-color: #ffffff;
+    }
+    .progress-spinner-message {
+      color: #ffffff;
+    }
+  }
+  & > .bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+
+  & > .bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+}
+@-webkit-keyframes bouncedelay {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+    opacity: 1;
+  }
+  50% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes bouncedelay {
+  0%,
+  100% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
